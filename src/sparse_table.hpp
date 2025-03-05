@@ -12,7 +12,7 @@ public:
 
     sparse_table() : L{}, dat{} {}
 
-    sparse_table(const std::vector<S>& a) : L(a.size() + 1), dat{} {
+    explicit sparse_table(const std::vector<S>& a) : L(a.size() + 1), dat{} {
         for (int i{1} ; i < (int)L.size() ; i++) {
             L[i] = L[i - 1] + (i >> (L[i - 1] + 1));
         }
